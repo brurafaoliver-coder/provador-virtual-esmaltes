@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provador de Esmaltes Virtual</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="app-container">
+        <header class="app-header">
+            <button class="btn-icon" aria-label="Fechar">✕</button>
+            <h1>Provador de Esmaltes Virtual</h1>
+        </header>
+
+        <section class="camera-view">
+            <video id="webcam" autoplay playsinline muted></video>
+            <canvas id="ar-canvas"></canvas>
+            <div class="loading-overlay">Carregando Câmera...</div>
+        </section>
+
+        <section class="controls-panel">
+            <h2>Toque para testar:</h2>
+            <div class="color-carousel">
+                <button class="color-card active" data-color="renda">
+                    <span class="color-preview" style="background-color: #F6F6F6;"></span>
+                    <span class="color-name">Renda</span>
+                </button>
+                <button class="color-card" data-color="beijo">
+                    <span class="color-preview" style="background-color: #B80F1B;"></span>
+                    <span class="color-name">Beijo</span>
+                </button>
+                <button class="color-card" data-color="fucsia">
+                    <span class="color-preview" style="background-color: #D11A5B;"></span>
+                    <span class="color-name">Fúcsia</span>
+                </button>
+                <button class="color-card" data-color="preto">
+                    <span class="color-preview" style="background-color: #111111;"></span>
+                    <span class="color-name">Preto</span>
+                </button>
+            </div>
+            <div class="action-button">
+                <button class="btn-primary">Capturar</button>
+            </div>
+        </section>
+    </main>
+    <script src="js/ar-engine.js" type="module"></script>
+    <script src="js/app.js" type="module"></script>
+</body>
+</html>

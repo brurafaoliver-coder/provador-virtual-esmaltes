@@ -1,0 +1,11 @@
+const geometriaUnha = new THREE.SphereGeometry(0.1, 32, 32);// 2. Escala a esfera para que fique mais parecida com uma unha
+geometriaUnha.scale(1, 1.5, 0.3); // A escala em Y é maior para alongar a forma, e a escala em Z é menor para achatá-la
+const materialEsmalte = new THREE.MeshPhysicalMaterial({ // Material físico para melhor controle de reflexos e brilho
+    color: 0xff0055, // Cor do esmalte (Risqué)
+    roughness: 0.1, // Baixa rugosidade = muito reflexo
+    metalness: 0.1, // Leve toque metálico para mais brilho
+    clearcoat: 1.0,// Camada extra de brilho (verniz/top coat)
+    clearcoatRoughness: 0.1 // Baixa rugosidade na camada de verniz para mais brilho
+});
+const unha3D = new THREE.Mesh(geometriaUnha, materialEsmalte); // Cria a malha da unha usando a geometria e o material
+scene.add(unha3D);
